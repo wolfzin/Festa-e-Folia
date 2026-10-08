@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Festa &amp; Folia · artigos para festas em Gaspar/SC</title>
+<meta name="description" content="Balões, decoração, confeitaria, guloseimas, velas, fantasias e brinquedos em mais de 400 m² no Centro de Gaspar. 10 anos em 2026.">
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/festa.css">
+<style>
+/* ===== Movimento (WolfStudio v3) — só roda com JS e sem "reduzir movimento" ===== */
+:root{--e:cubic-bezier(.2,.7,.2,1)}
+.anim :is(.temas h2,.categorias h2,.cat-lista li,.bal-texto,.bal-form,.fogos-dentro>*,.historia h2,.linha li,.av-nota,.avaliacoes blockquote,.assuntos,.visite h2,.vis-bloco){transition:opacity .7s var(--e) var(--d,0ms),translate .8s var(--e) var(--d,0ms),scale .8s var(--e) var(--d,0ms),rotate .8s var(--e) var(--d,0ms),transform .35s var(--e),box-shadow .35s,border-color .25s,background-color .25s}
+.anim :is(.temas h2,.categorias h2,.cat-lista li,.bal-texto,.bal-form,.fogos-dentro>*,.historia h2,.linha li,.av-nota,.avaliacoes blockquote,.assuntos,.visite h2,.vis-bloco):not(.in){opacity:0;translate:var(--tx,0px) var(--ty,22px);scale:var(--sc,1)}
+@keyframes sobe{from{opacity:0;translate:0 18px}}
+@keyframes gira{to{rotate:360deg}}
+@media print{.anim *{opacity:1!important;translate:none!important;scale:none!important;clip-path:none!important}}
+/* hero: os balões inflam um a um e ficam flutuando; os fios se desenham */
+.hero-texto>*{animation:sobe .8s var(--e) both}
+.hero-texto>:nth-child(2){animation-delay:.1s}.hero-texto>:nth-child(3){animation-delay:.2s}.hero-texto>:nth-child(4){animation-delay:.3s}
+.selo-10{animation:carimba .5s cubic-bezier(.3,1.4,.5,1) .5s both}
+@keyframes carimba{from{opacity:0;scale:1.8}}
+.b-foto{animation:sobe .9s var(--e) .2s both}
+.fios path{stroke-dasharray:420;animation:fio 1.4s ease .3s both}
+@keyframes fio{from{stroke-dashoffset:420}to{stroke-dashoffset:0}}
+.chip{animation:infla .6s cubic-bezier(.3,1.5,.5,1) .6s both,boia 4s ease-in-out 1.4s infinite alternate}
+.b2{animation-delay:.72s,1.6s;animation-duration:.6s,4.6s}.b3{animation-delay:.84s,1.5s;animation-duration:.6s,3.8s}.b4{animation-delay:.96s,1.8s;animation-duration:.6s,5s}.b5{animation-delay:1.08s,1.7s;animation-duration:.6s,4.2s}
+@keyframes infla{from{opacity:0;scale:.2}}
+@keyframes boia{from{translate:0 0}to{translate:0 -7px}}
+/* painel de temas: os cartões entram ao trocar de festa */
+.painel:not([hidden]) .cards li{animation:sobe .5s var(--e) both}
+.painel:not([hidden]) .cards li:nth-child(2){animation-delay:.07s}.painel:not([hidden]) .cards li:nth-child(3){animation-delay:.14s}.painel:not([hidden]) .cards li:nth-child(4){animation-delay:.21s}
+.cards li{transition:transform .3s var(--e),box-shadow .3s}
+.cards li:hover{transform:translateY(-5px) rotate(-.6deg)}
+/* categorias, história, avaliações */
+.anim .cat-lista li{--sc:.7;--ty:0px}
+.cat-lista li:hover{transform:translateY(-3px) rotate(-2deg)}
+.anim .av-nota{--sc:.6;--ty:0px}
+.anim .av-nota:not(.in){rotate:-24deg}
+.av-nota b{font-variant-numeric:tabular-nums}
+.vis-bloco:hover{transform:translateY(-4px)}
+.bal-form input{transition:border-color .2s,box-shadow .2s}
+.bal-form input:focus{box-shadow:0 0 0 4px rgba(233,30,140,.18)}
+.pedido:not([hidden]){animation:sobe .45s var(--e)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+</style>
+<script>(function(d){if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion:reduce)').matches)d.classList.add('anim')})(document.documentElement)</script>
+</head>
+<body>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<p class="faixa-demo">Demonstração WolfStudio — não é o site oficial.</p>
+
+<header class="topo">
+  <a class="marca" href="#inicio" aria-label="Festa e Folia, início">
+    <span class="letreiro"><span class="l-festa">FESTA</span><span class="l-e">&amp;</span><span class="l-folia">FOLIA</span></span>
+    <small>artigos para festas · Gaspar</small>
+  </a>
+  <p class="status" id="status" aria-live="polite">Seg a sex até 18h · sáb até 12h</p>
+  <a class="bt bt-rosa bt-topo" href="#baloes">Encomendar balões</a>
+</header>
+
+<main id="conteudo">
+  <section class="hero" id="inicio" aria-labelledby="titulo">
+    <div class="confete" aria-hidden="true"></div>
+    <div class="hero-grade">
+      <div class="hero-texto">
+        <p class="selo-10"><b>10 anos</b> 2016–2026</p>
+        <h1 id="titulo">Tudo para a sua festa, em mais de 400 m².</h1>
+        <p class="lead">Balões, decoração, confeitaria, guloseimas, velas, fantasias e brinquedos no Centro de Gaspar.</p>
+        <p class="pergunta" id="pergunta">Qual é a festa? <span>Escolha um balão.</span></p>
+      </div>
+      <div class="cacho">
+        <svg class="fios" viewBox="0 0 560 540" aria-hidden="true" focusable="false"><g stroke="#555" stroke-width="1.6" fill="none"><path d="M100 205 Q160 400 280 528"/><path d="M470 172 Q420 380 280 528"/><path d="M90 378 Q170 470 280 528"/><path d="M500 345 Q420 460 280 528"/><path d="M420 497 Q350 515 280 528"/><path d="M300 355 Q290 450 280 528"/></g></svg>
+        <figure class="b-foto"><img width="1600" height="720" src="assets/img/fachada-colorida.jpg" alt="Fachada colorida da loja Festa & Folia, com o letreiro em rosa, verde e azul" fetchpriority="high"></figure>
+        <div class="chips" role="group" aria-labelledby="pergunta">
+          <button type="button" class="chip b1" data-tema="aniversario" aria-pressed="true" aria-controls="painel-temas">Aniversário</button>
+          <button type="button" class="chip b2" data-tema="junina" aria-pressed="false" aria-controls="painel-temas">Festa junina</button>
+          <button type="button" class="chip b3" data-tema="confeitaria" aria-pressed="false" aria-controls="painel-temas">Confeitaria</button>
+          <button type="button" class="chip b4" data-tema="baloes" aria-pressed="false" aria-controls="painel-temas">Balões</button>
+          <button type="button" class="chip b5" data-tema="brincadeira" aria-pressed="false" aria-controls="painel-temas">Brinquedos e fantasias</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="temas" id="painel-temas" aria-labelledby="t-tema" data-tema="aniversario" tabindex="-1">
+    <h2 id="t-tema"><span class="t-pre">Para a festa:</span> <span id="tema-nome">Aniversário</span></h2>
+    <div class="painel" data-painel="aniversario">
+      <ul class="cards" role="list">
+        <li><img loading="lazy" decoding="async" width="1250" height="825" src="assets/img/balcao-baloes.jpg" alt="Balcão de balões com balões metalizados de Feliz Aniversário e velas numerais"><b>Balões</b></li>
+        <li><img loading="lazy" decoding="async" width="1250" height="825" src="assets/img/velas-numerais.jpg" alt="Parede de velas numerais coloridas"><b>Velas</b></li>
+        <li><img loading="lazy" decoding="async" width="1250" height="825" src="assets/img/chocolates-guloseimas.jpg" alt="Prateleiras de chocolates e guloseimas"><b>Chocolates e guloseimas</b></li>
+        <li><img loading="lazy" decoding="async" width="590" height="600" src="assets/img/artigos-de-festa.jpg" alt="Painel de artigos de festa com decorações de girassol e enfeites"><b>Artigos de festa</b></li>
+      </ul>
+    </div>
+    <div class="painel" data-painel="junina" hidden>
+      <ul class="cards" role="list">
+        <li><img loading="lazy" decoding="async" width="900" height="1200" src="assets/img/boneco-junino.jpg" alt="Painel decorativo de caipira tocando sanfona"><b>Decoração junina</b></li>
+        <li><img loading="lazy" decoding="async" width="675" height="1200" src="assets/img/espantalhos-juninos.jpg" alt="Espantalhos decorativos de festa junina"><b>Espantalhos e enfeites</b></li>
+        <li><img loading="lazy" decoding="async" width="1250" height="825" src="assets/img/chocolates-guloseimas-2.jpg" alt="Corredor de doces e guloseimas"><b>Doces</b></li>
+        <li class="sem-foto c-verde"><span class="icone tnt" aria-hidden="true"></span><b>TNT e EVA</b></li>
+      </ul>
+    </div>
+    <div class="painel" data-painel="confeitaria" hidden>
+      <ul class="cards" role="list">
+        <li><img loading="lazy" decoding="async" width="1250" height="825" src="assets/img/confeitaria-corredor.jpg" alt="Corredor de confeitaria com formas, coberturas e utensílios"><b>Confeitaria</b></li>
+        <li><img loading="lazy" decoding="async" width="1250" height="825" src="assets/img/embalagens-bandejas.jpg" alt="Bandejas e embalagens para doces"><b>Bandejas</b></li>
+        <li><img loading="lazy" decoding="async" width="554" height="1200" src="assets/img/embalagens-confeitaria.jpg" alt="Embalagens plásticas para confeitaria"><b>Embalagens</b></li>
+        <li><img loading="lazy" decoding="async" width="900" height="1200" src="assets/img/embalagem-detalhe.jpg" alt="Detalhe de embalagens transparentes para doces"><b>Potes e caixinhas</b></li>
+      </ul>
+    </div>
+    <div class="painel" data-painel="baloes" hidden>
+      <ul class="cards" role="list">
+        <li><img loading="lazy" decoding="async" width="1250" height="825" src="assets/img/pacotes-de-baloes.jpg" alt="Pacotes de balões de várias cores na parede"><b>Balões em pacote</b></li>
+        <li><img loading="lazy" decoding="async" width="1250" height="825" src="assets/img/baloes-e-bolas.jpg" alt="Prateleiras com balões e bolas"><b>Balões e bolas</b></li>
+        <li><img loading="lazy" decoding="async" width="1250" height="825" src="assets/img/balcao-baloes.jpg" alt="Balcão de balões da loja"><b>Balcão de balões</b></li>
+        <li class="sem-foto c-rosa"><span class="icone balao" aria-hidden="true"></span><b>Personalizados sob encomenda</b><a href="#baloes">Montar pedido</a></li>
+      </ul>
+    </div>
+    <div class="painel" data-painel="brincadeira" hidden>
+      <ul class="cards" role="list">
+        <li><img loading="lazy" decoding="async" width="1250" height="600" src="assets/img/brinquedos.jpg" alt="Brinquedos em cartela pendurados na parede"><b>Brinquedos</b></li>
+        <li class="sem-foto c-ciano"><span class="icone mascara" aria-hidden="true"></span><b>Fantasias e máscaras</b></li>
+        <li><img loading="lazy" decoding="async" width="590" height="600" src="assets/img/artigos-de-festa.jpg" alt="Painel de artigos de festa"><b>Adereços</b></li>
+        <li class="sem-foto c-amarelo"><span class="icone tnt" aria-hidden="true"></span><b>TNT e EVA</b></li>
+      </ul>
+    </div>
+    <p class="nota">Sem preços aqui: venha conferir na loja ou ligue para perguntar.</p>
+  </section>
+
+  <section class="categorias" aria-labelledby="t-cat">
+    <h2 id="t-cat">O que tem na loja</h2>
+    <ul class="cat-lista" role="list">
+      <li class="c-rosa">Balões</li><li class="c-verde">Decoração temática</li><li class="c-ciano">Fantasias e máscaras</li><li class="c-amarelo">Confeitaria e embalagens</li>
+      <li class="c-ciano">Chocolates e guloseimas</li><li class="c-rosa">Velas</li><li class="c-amarelo">TNT e EVA</li><li class="c-verde">Brinquedos</li>
+    </ul>
+  </section>
+
+  <section class="baloes" id="baloes" aria-labelledby="t-bal">
+    <div class="bal-texto">
+      <h2 id="t-bal">Balões personalizados</h2>
+      <p>Preencha o pedido e leve o texto pronto: ligue para a loja e leia, ou mande por e-mail.</p>
+      <p class="importante"><strong>Sua encomenda só está garantida depois da confirmação da loja.</strong> Prazo mínimo para encomenda: a confirmar com a loja.</p>
+    </div>
+    <form class="bal-form" id="bal" novalidate>
+      <div class="resumo-erros" id="b-erros" tabindex="-1" hidden></div>
+      <div class="campos">
+        <div><label for="b-nome">Seu nome</label><input type="text" id="b-nome" autocomplete="name" aria-describedby="b-nome-erro"><p class="erro" id="b-nome-erro" hidden></p></div>
+        <div><label for="b-data">Data de retirada</label><input type="date" id="b-data" aria-describedby="b-data-erro"><p class="erro" id="b-data-erro" hidden></p></div>
+        <div><label for="b-hora">Horário de retirada</label><input type="time" id="b-hora" aria-describedby="b-hora-ajuda b-hora-erro"><p class="ajuda" id="b-hora-ajuda">Seg a sex até 18h; sábado até 12h.</p><p class="erro" id="b-hora-erro" hidden></p></div>
+        <div><label for="b-qtd">Quantidade</label><input type="number" id="b-qtd" min="1" inputmode="numeric" aria-describedby="b-qtd-erro"><p class="erro" id="b-qtd-erro" hidden></p></div>
+        <div class="largo"><label for="b-texto">Texto do balão</label><input type="text" id="b-texto" maxlength="60" aria-describedby="b-texto-erro"><p class="erro" id="b-texto-erro" hidden></p></div>
+        <div class="largo"><label for="b-cores">Cores</label><input type="text" id="b-cores" maxlength="60" placeholder="ex.: rosa e dourado"></div>
+      </div>
+      <button type="submit" class="bt bt-rosa">Montar texto do pedido</button>
+      <div class="pedido" id="pedido" hidden tabindex="-1">
+        <label for="b-saida">Texto do pedido</label>
+        <textarea id="b-saida" rows="7" readonly></textarea>
+        <div class="acoes">
+          <button type="button" class="bt bt-ciano" id="copiar">Copiar texto</button>
+          <a class="bt bt-verde" href="tel:+554733328605">Ligar (47) 3332-8605</a>
+          <a class="bt bt-contorno" id="b-email" href="mailto:adm.festaefolia@gmail.com">Enviar por e-mail</a>
+        </div>
+        <p class="copiado" id="copiado" role="status"></p>
+      </div>
+    </form>
+  </section>
+
+  <section class="fogos" aria-labelledby="t-fogos">
+    <div class="brilhos" aria-hidden="true"></div>
+    <div class="fogos-dentro">
+      <h2 id="t-fogos">Fogos de artifício: só na loja</h2>
+      <p>A loja tem uma sala especial de fogos. Em Santa Catarina, a Lei estadual 19.764/2026 proíbe fogos de estampido; continuam permitidos os fogos de efeito visual, sem estampido.</p>
+      <ul class="regras" role="list">
+        <li>Venda somente na loja física.</li>
+        <li>Somente para maiores de 18 anos.</li>
+        <li>Apenas fogos de efeito visual, sem estampido.</li>
+      </ul>
+      <a class="bt bt-branco" href="#visite">Ver horário e endereço da loja</a>
+    </div>
+  </section>
+
+  <section class="historia" aria-labelledby="t-hist">
+    <h2 id="t-hist">10 anos de festa em Gaspar</h2>
+    <ol class="linha" role="list">
+      <li class="c-rosa"><b>2016</b><span>A Festa &amp; Folia abre as portas, em agosto.</span></li>
+      <li class="c-verde"><b>2019</b><span>Em 24 de agosto, muda para a loja atual na Augusto Beduschi: o espaço triplica e passa de 400 m².</span></li>
+      <li class="c-ciano"><b>2026</b><span>Em 22 de agosto, festa na loja pelos 10 anos.</span></li>
+    </ol>
+  </section>
+
+  <section class="avaliacoes" aria-labelledby="t-av">
+    <div class="av-nota"><b>4,6</b><span>★ no Google</span></div>
+    <div>
+      <h2 id="t-av">Quem passou por aqui</h2>
+      <blockquote><p>“Atendimento com excelência do Eduardo! … atendimento pelo whats”</p><cite>Flavio Lucas, 5★, ago/2026</cite></blockquote>
+      <p class="assuntos">Assuntos mais citados nas avaliações: <span>preço</span> <span>confeitaria</span> <span>brinquedos</span> <span>estacionamento</span> <span>organizado</span></p>
+    </div>
+  </section>
+
+  <section class="visite" id="visite" aria-labelledby="t-vis">
+    <h2 id="t-vis">Visite a loja</h2>
+    <div class="vis-grade">
+      <div class="vis-bloco c-rosa">
+        <h3>Endereço</h3>
+        <p>R. Vereador Augusto Beduschi, 199<br>Centro · Gaspar/SC · CEP 89110-070</p>
+        <p>Estacionamento na frente da loja.</p>
+        <a class="bt bt-branco" href="https://www.google.com/maps/search/?api=1&amp;query=Festa%20%26%20Folia%2C%20R.%20Augusto%20Beduschi%2C%20199%2C%20Gaspar%20SC" target="_blank" rel="noopener">Abrir no mapa</a>
+      </div>
+      <div class="vis-bloco c-amarelo">
+        <h3>Horário</h3>
+        <dl>
+          <div><dt>Seg a sex</dt><dd>8h30* às 18h</dd></div>
+          <div><dt>Sábado</dt><dd>8h30 às 12h</dd></div>
+        </dl>
+        <p class="pequeno">*O Google mostra 8h30; um jornal citou 8h. Abertura a confirmar.</p>
+      </div>
+      <div class="vis-bloco c-ciano">
+        <h3>Contato</h3>
+        <ul role="list">
+          <li><a href="tel:+554733328605">(47) 3332-8605</a></li>
+          <li><a href="mailto:adm.festaefolia@gmail.com">adm.festaefolia@gmail.com</a></li>
+          <li><a href="https://www.instagram.com/festafolia/" target="_blank" rel="noopener">Instagram @festafolia</a></li>
+        </ul>
+        <p class="pequeno">Também há a Festa &amp; Folia Loja II, em Ilhota (endereço a confirmar).</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <p><strong>Festa &amp; Folia</strong> · CNPJ 25.217.174/0001-31</p>
+  <p>Demonstração feita por WolfStudio.</p>
+</footer>
+<script src="assets/js/festa.js"></script>
+<script>
+/* Movimento (WolfStudio v3): revelar ao rolar, contadores e menu ativo. */
+(function(){
+  var R=document.documentElement; if(!R.classList.contains('anim')) return;
+  try{
+    var SEL='.temas h2,.categorias h2,.cat-lista li,.bal-texto,.bal-form,.fogos-dentro>*,.historia h2,.linha li,.av-nota,.avaliacoes blockquote,.assuntos,.visite h2,.vis-bloco', CNT='.av-nota b';
+    var io=new IntersectionObserver(function(es){
+      var n=0;
+      es.forEach(function(e){
+        if(!e.isIntersecting) return;
+        var el=e.target; io.unobserve(el);
+        if(n) el.style.setProperty('--d',Math.min(n,7)*90+'ms');
+        n++; el.classList.add('in');
+        setTimeout(function(){el.style.removeProperty('--d')},1700);
+      });
+    },{threshold:.08,rootMargin:'0px 0px -5% 0px'});
+    var pend=[].slice.call(document.querySelectorAll(SEL));
+    pend.forEach(function(el){io.observe(el)});
+    /* rolagem rápida pode pular um bloco: o que já ficou para cima aparece sem esperar */
+    var tv=0;
+    function varre(){pend=pend.filter(function(el){
+      if(el.classList.contains('in')) return false;
+      if(el.getBoundingClientRect().bottom<0){io.unobserve(el);el.classList.add('in');return false}
+      return true;
+    })}
+
+    function conta(el){
+      var tn=null;
+      [].some.call(el.childNodes,function(c){if(c.nodeType===3&&/\d,\d/.test(c.nodeValue)){tn=c;return true}});
+      if(!tn) return;
+      var full=tn.nodeValue, m=full.match(/(\d+),(\d)/), alvo=parseFloat(m[1]+'.'+m[2]), t0=null;
+      function f(t){
+        if(!t0) t0=t;
+        var p=Math.min(1,(t-t0)/1100), v=alvo*(1-Math.pow(1-p,3));
+        tn.nodeValue=p<1?full.replace(m[0],v.toFixed(1).replace('.',',')):full;
+        if(p<1) requestAnimationFrame(f);
+      }
+      requestAnimationFrame(f);
+    }
+    var cio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){cio.unobserve(e.target);conta(e.target)}})},{threshold:.6});
+    [].forEach.call(document.querySelectorAll(CNT),function(el){cio.observe(el)});
+
+    var links=[].slice.call(document.querySelectorAll('nav a[href^="#"]')), mapa={};
+    var sio=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(!e.isIntersecting) return;
+      links.forEach(function(a){a.classList.remove('on')}); mapa[e.target.id].classList.add('on');
+    })},{rootMargin:'-40% 0px -55% 0px'});
+    links.forEach(function(a){var s=document.getElementById(a.getAttribute('href').slice(1)); if(s&&s.id!=='conteudo'){mapa[s.id]=a;sio.observe(s)}});
+
+    var espera=false;
+    function rolar(){
+      espera=false; var y=window.scrollY||0;
+      R.classList.toggle('rolou',y>8);
+      clearTimeout(tv); if(pend.length) tv=setTimeout(varre,180);
+      if(y<160) links.forEach(function(a){a.classList.remove('on')});
+
+    }
+    window.addEventListener('scroll',function(){if(!espera){espera=true;requestAnimationFrame(rolar)}},{passive:true});
+    window.addEventListener('resize',rolar);
+    rolar();
+
+  }catch(err){R.classList.remove('anim')}
+})();
+</script>
+</body>
+</html>
